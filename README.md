@@ -14,20 +14,20 @@
     <b>如果本系统对您有所帮助，您可以点右上角 "Star" 支持一下 谢谢！</b>
 </p>
 
-<p><br /></p>
+
 
 ## 导航栏目
  [官网地址](http://www.a3-mall.com)
  | [服务端下载](https://gitee.com/xzncit/A3Mall)
  | [帮助文档](http://doc.a3-mall.com)
 
-<p><br /></p>
+
 
 ## 项目介绍
    A3Mall商城系统是基于ThinkPhp6.0+Vue开发的一套移动电商系统，
    支持微信公众号商城、H5商城、小程序商城，支持多种营销活动，优惠劵、订单活动、团购、秒杀、会员特价、积分商品等功能。前后端全部开源。
 
-<p><br /></p>
+
    
 ## 安装&运行
 
@@ -38,12 +38,11 @@
 修改小程序根目录下 config.js 配置文件
 ```
 
-<p><br /></p>
 
 ## QQ交流群
  <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=de316f1a1dbf61859529484891ee50369e3c2bc6fe37e15bb94f8bf731cc3482"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="A3Mall开发交流群" title="A3Mall开发交流群"></a>
 
-<p><br /></p>
+
 
  **bug反馈**
 
