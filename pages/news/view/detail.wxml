@@ -1,0 +1,15 @@
+<view>
+
+    <view v-if="!isEmpty" class="main clearfix">
+        <view class="title">{{result.title}}</view>
+        <view class="info">
+            <text>{{result.cat_name}}</text>
+            <text class="iconfont iconky_newsTime"> {{result.create_time}}</text>
+            <text class="iconfont iconky_newsEye"> {{result.hits}}</text>
+        </view>
+        <view class="content clearfix">
+          <rich-text nodes="{{result.content}}"></rich-text>
+        </view>
+    </view>
+
+</view>

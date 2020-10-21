@@ -1,0 +1,12 @@
+<view class="wrap">
+    <view class="top c">
+        <image src="/images/empty.png"></image>
+    </view>
+    <view class="title c">抱歉，页面发生错误</view>
+    <view class="intro c">{{msg}}</view>
+    <view class="btn c">
+      <navigator url="/pages/cart/index/index" hover-class="none" open-type="switchTab">
+        <text>返回购物车</text>
+      </navigator>
+    </view>
+</view>

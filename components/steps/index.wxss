@@ -1,0 +1,159 @@
+.steps {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+}
+
+.column {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.row-text-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.column-text-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.row-text {
+  display: inline-flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.column-text {
+  padding: 6px 0px;
+  border-bottom-style: solid;
+  border-bottom-width: 0px;
+  border-bottom-color: #e5e5e5;
+  display: flex;
+  flex-direction: column;
+}
+
+.row-title {
+  font-size: 25rpx;
+  line-height: 16px;
+  text-align: center;
+}
+
+.column-title {
+  font-size: 28rpx;
+  text-align: left;
+  line-height: 18px;
+}
+
+.row-desc {
+  font-size: 24rpx;
+  line-height: 14px;
+  text-align: center;
+}
+
+.column-desc {
+  font-size: 24rpx;
+  text-align: left;
+  line-height: 36rpx;
+}
+
+.row-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.column-container {
+  display: inline-flex;
+  width: 30px;
+  flex-direction: column;
+}
+
+.row-line-item {
+  display: inline-flex;
+  flex-direction: row;
+  flex: 1;
+  height: 28rpx;
+  line-height: 28rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.column-line-item {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.row-line {
+  flex: 1;
+  height: 2rpx;
+  background-color: #999;
+}
+
+.column-line {
+  width: 2rpx;
+  background-color: #999;
+}
+
+.row-line--after {
+  transform: translateX(2rpx);
+}
+
+.column-line--after {
+  flex: 1;
+  transform: translate(0px, 2rpx);
+}
+
+.row-line--before {
+  transform: translateX(-2rpx);
+}
+
+.column-line--before {
+  height: 12rpx;
+  transform: translate(0px, -2rpx);
+}
+
+.row-circle {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 200rpx;
+  background-color: #999;
+  margin: 0px 6rpx;
+}
+
+.column-circle {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 200rpx;
+  background-color: #999;
+  margin: 8rpx 0px 10rpx 0px;
+}
+
+.row-check {
+  margin: 0px 12rpx;
+}
+
+.column-check {
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  margin: 4rpx 0px;
+}
+
+.column-check view {
+  width: 28rpx;
+  height: 28rpx;
+  font-size: 12px;
+  color: #333;
+}

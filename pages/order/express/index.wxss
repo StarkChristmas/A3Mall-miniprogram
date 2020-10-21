@@ -1,0 +1,97 @@
+.money {
+  color: #fc4141;
+}
+
+.top {
+  background-color: #fff;
+  position: relative;
+}
+
+.top:before {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 4rpx;
+  background: -webkit-repeating-linear-gradient(135deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #1989fa 0, #1989fa 45%, transparent 0, transparent 50%);
+  background: repeating-linear-gradient(-45deg, #ff6c6c 0, #ff6c6c 20%, transparent 0, transparent 25%, #1989fa 0, #1989fa 45%, transparent 0, transparent 50%);
+  background-size: 160rpx;
+  content: '';
+}
+
+.top .status {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.top .address {
+  font-size: 28rpx;
+  width: 92%;
+  margin: 0 auto;
+}
+
+.top .address .info {
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.top .address .info text:first-child {
+  padding-right: 20rpx;
+}
+
+.top .address .address-info {
+  height: 60rpx;
+  line-height: 40rpx;
+}
+
+.order {
+  background-color: #fff;
+  margin-top: 30rpx;
+  padding-bottom: 20rpx;
+}
+
+.order .title {
+  width: 100%;
+  margin: 0 auto;
+  color: #666;
+  font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #eee;
+}
+
+.order .title text {
+  padding-left: 30rpx;
+}
+
+.order .list {
+  width: 100%;
+}
+
+.order .list .list-box {
+  width: 92%;
+  height: auto !important;
+  height: 80rpx;
+  min-height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+  font-size: 26rpx;
+  color: #333;
+  border-bottom: 2rpx solid #ebedf0;
+}
+
+.order .list .list-box view {
+  display: inline-block;
+}
+
+.order .list .list-box view:first-child {
+  float: left;
+}
+
+.order .list .list-box view:last-child {
+  float: right;
+}
+
+.order .list .list-box textarea {
+  height: 150rpx;
+}

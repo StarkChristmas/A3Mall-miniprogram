@@ -1,0 +1,108 @@
+/**index.wxss**/
+.container{
+  background-color: #fff;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.search{
+  width: 100%;
+  margin: 0 auto;
+  background: #fafafa;
+  height: 90rpx; 
+}
+
+.search .wrap{
+  width: 700rpx;
+  height: 60rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  border:1px solid #bfbfbf;
+  margin: 0 auto;
+  position: relative;
+  top: 15rpx;
+}
+.search-box{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 15rpx;
+  background-color: #fff;
+  background-size: 34rpx 33rpx;
+  background-position: 20rpx center;
+  position: relative;
+  text-indent: 70rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.search-box::before {
+  position: absolute;
+  content: "\e629";
+  left: -55rpx;
+  top: -1rpx;
+  font-size: 38rpx;
+  color: #aaa;
+}
+
+.menu {
+  width: 178rpx;
+  float: left;
+  background: #f3f4f6;
+}
+.menu view{
+  width: 100%;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #f3f4f6;
+  font-size: 27rpx;
+  color: #333;
+  border-bottom: 1px solid #dadbdd;
+}
+.menu view.active{
+  background: #fff;
+}
+.content{
+  float: right;
+  width: 552rpx;
+	padding: 0 10rpx;
+}
+.s-item{
+  display: flex;
+  align-items: center;
+  height: 70rpx;
+  padding-top: 8rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.t-list{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background: #fff;
+  padding-top: 12rpx;
+}
+.t-list:after{
+  content: '';
+  flex: 99;
+  height: 0;
+}
+.t-item{
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 176rpx;
+  font-size: 26rpx;
+  color: #666;
+  padding-bottom: 20rpx;
+}
+.t-item .children-text{
+  text-align: center;
+}
+.t-item image{
+  width: 140rpx;
+  height: 140rpx;
+}

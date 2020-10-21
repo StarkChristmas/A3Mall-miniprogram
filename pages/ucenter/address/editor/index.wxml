@@ -1,0 +1,52 @@
+<view>
+  <view class="wrap">
+		
+		<view class="theForm">
+			<form bindsubmit="onFormSubmit">
+				<view class="fields-box">
+					<view>姓名</view>
+					<view>
+						<input type="text" name="name" value="{{name}}" placeholder="收货人姓名" />
+					</view>
+				</view>
+				
+				<view class="fields-box">
+					<view>电话</view>
+					<view>
+						<input type="text" name="tel" value="{{tel}}" placeholder="收货人手机号" />
+					</view>
+				</view>
+				
+				<view class="fields-box">
+					<view>地区</view>
+					<view>
+            <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+						  <input type="text" value="{{area_name}}" disabled="true" placeholder="请选择您所在地区" />
+            </picker>
+					</view>
+				</view>
+				
+				<view class="fields-box">
+					<view>地址</view>
+					<view>
+						<input type="text" name="addressDetail" value="{{addressDetail}}" placeholder="请填写您所在地址" />
+					</view>
+				</view>
+				
+				<view class="switch-box">
+					<view>默认地址</view>
+					<view>
+						<switch checked="{{is_default}}" bindchange="switchChange" />
+					</view>
+				</view>
+				
+				<view class="btn">
+					<button form-type="submit">提 交</button>
+				</view>
+				
+			</form>
+		</view>
+		
+		
+	</view>
+</view>

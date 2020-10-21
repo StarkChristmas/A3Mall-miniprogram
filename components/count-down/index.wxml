@@ -1,0 +1,27 @@
+<view class="aaa-count-down simple">
+    <block wx:if="{{ isShow }}">
+        <view class="wrap-simple">
+            <block wx:if="before">
+                <view class="before">{{before}}</view>
+            </block>
+            <view class="day">
+                <text>{{time.day}}</text>
+                <text>{{dayText}}</text>
+            </view>
+            <view class="hour">
+                <text>{{time.hour}}</text>
+                <text>{{hourText}}</text>
+            </view>
+            <view class="minute">
+                <text>{{time.minute}}</text>
+                <text>{{minuteText}}</text>
+            </view>
+            <view class="second">
+                <text>{{time.second}}</text>
+                <text>{{secondText}}</text>
+            </view>
+            <view class="after" wx:if="after">{{after}}</view>
+        </view>
+    </block>
+    <view wx:if="!isShow" class="tips-simple">{{tips}}</view>
+</view>

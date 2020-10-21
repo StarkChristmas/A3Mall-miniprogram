@@ -1,0 +1,51 @@
+<!--index.wxml-->
+<view class="container clearfix">
+  <view class="search">
+    <view class="wrap">
+      <view bindtap="onSearch" class="iconfont search-box">请输入关键字</view>
+    </view>
+  </view>
+
+  <view class="menu" style="height:{{windowHeight}}px;overflow:hidden;">
+    <scroll-view scroll-top="{{menuTop}}" scroll-with-animation="true" scroll-y="true" style="height:{{windowHeight}}px">
+      <view 
+        data-pos='{{index}}' 
+        wx:for="{{category}}" 
+        wx:key="index" 
+        wx:for-item="item" 
+        class="{{currentIndex==index?'active':''}} menu-item" 
+        bindtap="changeMenu"
+      >{{item.title}}</view>
+    </scroll-view>
+  </view>
+
+  <view class="content" style="height:{{windowHeight}}px">
+    <scroll-view scroll-into-view="{{selectId}}" scroll-y scroll-with-animation="true" scroll-y="true" style="height:{{windowHeight}}px"  bindscroll="scrollEvent" scroll-top="{{scrollTop}}">
+
+      <view 
+        id="item-{{index}}"
+        wx:for="{{category}}" 
+        wx:key="index" 
+        wx:for-item="item" 
+        class="s-list goods-item"
+      >
+        <text class="s-item">{{item.title}}</text>
+        <view class="t-list">
+          <view 
+            class="t-item" 
+            wx:for="{{item.children}}" 
+            wx:key="j" 
+            wx:for-item="children" 
+            bindtap="jump"
+            data-id="{{children.id}}"
+          >
+            <image src="{{children.thumb_img}}"></image>
+            <view class="children-text"><text>{{children.name}}</text></view>
+          </view>
+        </view>
+      </view>
+
+    </scroll-view>
+  </view>
+
+</view>

@@ -1,0 +1,27 @@
+<view>
+
+  <view class="search-wrap">
+    <view class="field-box iconfont search-box">
+      <input type="text" name="key" bindinput="onSearchHandle" value="{{value}}" placeholder="请输入关键字" />
+    </view>
+    <view class="field-btn" bindtap="onSearchSubmit">
+      <view>搜索</view>
+    </view>
+  </view>
+
+  <view class="search-host-list clear">
+      <view class="host-list clear">
+          <view class="title">热门搜索</view>
+          <view class="list">
+              <text 
+              wx:for="{{keywords}}" 
+              wx:key="index" 
+              wx:for-item="item" 
+              bindtap="onSearch"
+              data-keywords="{{item}}"
+              >{{ item }}</text>
+          </view>
+      </view>
+  </view>
+
+</view>

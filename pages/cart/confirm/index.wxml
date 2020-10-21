@@ -1,0 +1,129 @@
+<view>
+  <view class="top" bindtap="onSelectAddress">
+    <view class="top-map">
+      <view class="icon-map"></view>
+    </view>
+    <view class="address">
+      <view class="info" wx:if="{{ address.tel }}">
+        <text wx:if="{{ address.name }}">收件人：{{ address.name }}</text>
+        <text wx:if="{{ address.tel }}">手机号：{{ address.tel }}</text>
+      </view>
+      <view class="info" wx:if="{{ !address.tel }}">
+        <text style="position: relative; top: 0rpx;">请选择地址</text>
+      </view>
+      <view class="address-info" wx:if="{{ address.address }}">{{ address.address }}</view>
+    </view>
+    <view class="arrow-right">
+      <view class="icon-arrow-right"></view>
+    </view>
+  </view>
+  
+  <view class="goods clearfix">
+    <view class="title">
+      <text>共{{orderData.item.length}}件商品</text>
+    </view>
+    <view class="goods-box clearfix">
+      <view
+      class="goods-item clear"
+      wx:for="{{orderData.item}}" 
+      wx:key="index" 
+      wx:for-item="item"
+      bindtap="goGoods"
+      data-id="{{ item.goods_id }}"
+      >
+        <view class="goods-img">
+          <image src="{{ item.thumb_image }}"></image>
+        </view>
+  
+        <view class="goods-info">
+          <view class="t">
+            <text>{{item.title}}</text>
+            <text>￥{{item.sell_price}}</text>
+          </view>
+          <view class="b">
+            <text wx:if="{{ item.goods_array }}">
+              <text 
+              wx:for="{{ item.goods_array }}" 
+              wx:for-item="value"
+              wx:key="j" 
+              style="padding-right: 10rpx;"
+              >
+                {{value.name}}：{{value.value}}
+              </text>
+            </text>
+            <text>× {{item.goods_nums}}</text>
+          </view>
+        </view>
+  
+      </view>
+  
+    </view>
+  </view>
+  
+  <view class="order">
+    <view class="title">
+      <text>订单信息</text>
+    </view>
+    <view class="list clear">
+      <view class="list-box clear">
+        <view>商品金额：</view>
+        <view>{{orderData.real_amount}}</view>
+      </view>
+      <view class="list-box clear">
+        <view>运费金额：</view>
+        <view>{{orderData.real_freight}}</view>
+      </view>
+      <view class="list-box clear" wx:if="{{ orderData.real_point > 0 }}">
+        <view>需要积分：</view>
+        <view class="money">{{orderData.real_point}}积分</view>
+      </view>
+      <view class="list-box clear">
+        <view>订单总额：</view>
+        <view class="money">{{orderData.payable_amount}}</view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="order">
+    <view class="title">
+      <text>备注内容</text>
+    </view>
+    <view class="list clear">
+      <view style="padding: 20rpx 25rpx;">
+        <textarea bindinput="onInputRemarks" placeholder="请输入留言" placeholder-style="font-size:30rpx" style="width: 100%; height: 100rpx;font-size:30rpx"></textarea>
+      </view>
+    </view>
+  </view>
+  
+  
+  <view class="order">
+    <view class="title">
+      <text>支付方式</text>
+    </view>
+    
+    <view class="payment-box">
+      <view class="payment-item" bindtap="onSelectPayment" data-pay="wechat">
+        <view><text class="wechat"></text></view>
+        <view class="{{ payment == 'wechat' ? 'activeColor' : '' }}">微信支付</view>
+        <view class="{{ payment == 'wechat' ? 'active' : '' }}"><text class="check"></text></view>
+      </view>
+      <view class="payment-item" bindtap="onSelectPayment" data-pay="balance">
+        <view><text class="balance"></text></view>
+        <view class="{{ payment == 'balance' ? 'activeColor' : '' }}">余额支付<text>可用余额: ￥{{orderData.users_price}}元</text></view>
+        <view class="{{ payment == 'balance' ? 'active' : '' }}"><text class="check"></text></view>
+      </view>
+    </view>
+    
+  </view>
+  
+  
+  <view class="operation-placeholder"></view>
+  <view class="operation">
+    <view class="amount">
+      <text>合计：</text>
+      <text>￥{{orderData.order_amount}}</text>
+    </view>
+    <view class="pay" bindtap="onOrderSubmit">提交订单</view>
+  </view>
+  
+</view>

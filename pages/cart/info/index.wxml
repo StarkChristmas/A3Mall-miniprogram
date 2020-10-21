@@ -1,0 +1,39 @@
+<view>
+
+    <view class="order-info clear">
+        <view class="title">订单创建成功</view>
+        <view class="list">
+            <view class="m">
+                <text>订单编号</text>
+                <text>{{order.order_no||""}}</text>
+            </view>
+
+            <view class="m">
+                <text>下单时间</text>
+                <text>{{order.create_time||""}}</text>
+            </view>
+
+            <view class="m">
+                <text>支付方式</text>
+                <text>{{order.payment_type||""}}</text>
+            </view>
+
+            <view class="m">
+                <text>支付金额</text>
+                <text>{{order.order_amount||""}}</text>
+            </view>
+
+            <view class="m">
+                <text>支付状态</text>
+                <text class="err">{{order.order_status||""}}</text>
+            </view>
+        </view>
+
+        <view class="btn">
+          <navigator url="/pages/order/detail/index?id={{ order.order_id }}" hover-class="none" open-type="redirect">
+            <text class="success">查看订单</text>
+          </navigator>
+        </view>
+    </view>
+
+</view>

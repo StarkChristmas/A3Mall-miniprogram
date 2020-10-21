@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="top-wrap">
+    <view class="header">
+      <open-data class="" type="userAvatarUrl"></open-data>
+    </view>
+  </view>
+  <view class="title">申请获取以下权限</view>
+  <view class="subtitle">获得你的公开信息（昵称、头像等）</view>
+  <view class="user-info-btn">
+    <button class="btn-normal" openType="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">授权登录</button>
+  </view>
+  <view class="back-page-btn">
+    <button class="btn-normal" catchtap="onBackPage">暂不登录</button>
+  </view>
+</view> 

@@ -1,0 +1,144 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="search-wrap">
+    <view class="search">
+      <view class="wrap">
+        <view bindtap="onSearch" class="iconfont search-box">请输入关键字</view>
+      </view>
+    </view>
+  </view>
+
+  <swiper
+    indicator-dots="true"
+    indicator-color="rgba(235,237,240,0.8)"
+    indicator-active-color="rgba(183,28,28,0.8)"
+    autoplay="true"
+    interval="3000"
+    circular="true"
+    class="swiper"
+  >
+    <swiper-item 
+      wx:for="{{banner}}" 
+      wx:key="index" 
+      wx:for-item="item" 
+    >
+      <image src="{{item}}"></image>
+    </swiper-item>
+  </swiper>
+
+  <view class="notice-box" data-id="{{notice.id}}" bindtap="onNotice">
+		<view class="notice-icon iconfont icongonggao"></view>
+		<view class="notice-text">{{ notice.title }}</view>
+	</view>
+
+  <view class="grid-box">
+      <view
+          class="grid-box-item"
+          wx:for="{{category}}" 
+          wx:key="index" 
+          wx:for-item="item" 
+          data-url="{{item.url}}"
+          bindtap="onCategory"
+      >
+          <view class="grid-box-item-img">
+              <image src="{{item.image}}"></image>
+          </view>
+          <text class="grid-box-item-text">{{ item.name }}</text>
+      </view>
+  </view>
+
+  <view class="image-box" data-image="{{image.url}}" bindtap="onImage">
+      <image src="{{image.image}}"></image>
+  </view>
+
+  <view class="host-box">
+      <view class="host-title">
+          <view>热销排行</view>
+          <view>更多</view>
+      </view>
+      <view class="host-middle">
+          <view 
+            class="host-middle-box" 
+            wx:for="{{hot}}" 
+            wx:key="index" 
+            wx:for-item="item" 
+            data-id="{{item.id}}"
+            bindtap="onJumpGoods"
+          >
+              <view><image src="{{item.image}}"></image></view>
+              <view>{{item.name}}</view>
+              <view>￥{{item.price}}</view>
+          </view>
+      </view>
+  </view>
+
+  <view class="prop-box" wx:if="{{imageGroup[0]}}">
+      <view class="l">
+          <image src="{{imageGroup[0].image}}" data-url="{{imageGroup[0].url}}"></image>
+      </view>
+      <view class="r">
+          <view>
+              <image src="{{imageGroup[1].image}}" data-url="{{imageGroup[1].url}}"></image>
+          </view>
+          <view>
+              <image src="{{imageGroup[2].image}}" data-url="{{imageGroup[2].url}}"></image>
+              <image src="{{imageGroup[3].image}}" data-url="{{imageGroup[3].url}}"></image>
+          </view>
+      </view>
+  </view>
+
+
+  <view class="recommend-wrap">
+      <view class="recommend-title">
+          <view>精品推荐</view>
+          <view>更多</view>
+      </view>
+
+      <view class="recommend">
+          <scroll-view scroll-x="true">
+            <view class="recommend-list">
+                <view 
+                class="recommend-item" 
+                wx:for="{{recommend}}" 
+                wx:key="index" 
+                wx:for-item="item"
+                data-id="{{item.id}}"
+                bindtap="onJumpGoods"
+                >
+                    <view><image src="{{item.image}}"></image></view>
+                    <view>{{item.name}}</view>
+                    <view>￥{{item.price}}</view>
+                </view>
+            </view>
+          </scroll-view>
+      </view>
+  </view>
+
+  <view class="goods-list" wx:if="!isEmpty">
+      <view class="goods-title">
+          猜你喜欢
+      </view>
+      
+      <view class="goods-list-box">
+          <view 
+            class="goods-list-item-box"
+            wx:for="{{list}}" 
+            wx:key="index" 
+            wx:for-item="item"
+            data-id="{{item.id}}"
+            bindtap="onJumpGoods"
+          >
+              <view class="goods-list-item-wrap">
+                  <view><image src="{{item.photo}}"></image></view>
+                  <view>{{ item.title }}</view>
+                  <view>￥{{ item.price }}</view>
+              </view>
+          </view>
+      </view>
+
+  </view>
+
+  <loadmore status="{{pageStatus}}"></loadmore>
+
+</view>

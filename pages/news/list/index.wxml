@@ -1,0 +1,22 @@
+<view>
+  <view class="news-list-box">
+    <view class="news-wrap">
+      <view
+        class="news-item-box clear"
+        wx:for="{{result}}" 
+        wx:key="index" 
+        wx:for-item="item"
+        data-id="{{item.id}}"
+        bindtap="jump"
+      >
+        <view class="news-box">
+          <text>{{item.title}}</text>
+          <text>{{item.create_time}}</text>
+        </view>
+        <view class="pic">
+          <image src="{{item.photo}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

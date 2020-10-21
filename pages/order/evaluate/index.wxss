@@ -1,0 +1,163 @@
+.money {
+  color: #fc4141;
+}
+
+.goods {
+  background-color: #fff;
+  margin-top: 30rpx;
+  padding-bottom: 20rpx;
+}
+
+.goods .title {
+  width: 100%;
+  margin: 0 auto;
+  color: #666;
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.goods .title text {
+  padding-left: 20rpx;
+}
+
+.goods .goods-box {
+  padding: 0 30rpx;
+}
+
+.goods .goods-box .goods-item {
+  padding-top: 10px;
+}
+
+.goods .goods-box .goods-item .goods-img {
+  width: 150rpx;
+  height: 150rpx;
+  display: inline-block;
+  float: left;
+}
+
+.goods .goods-box .goods-item .goods-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.goods .goods-box .goods-item .goods-info {
+  display: inline-block;
+  width: 72%;
+  font-size: 28rpx;
+  float: right;
+}
+
+.goods .goods-box .goods-item .goods-info .t {
+  width: 100%;
+  height: 90rpx;
+}
+
+.goods .goods-box .goods-item .goods-info .t text:first-child {
+  float: left;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  width: 70%;
+}
+
+.goods .goods-box .goods-item .goods-info .t text:last-child {
+  width: 30%;
+  float: right;
+  text-align: right;
+}
+
+.goods .goods-box .goods-item .goods-info .b {
+  width: 100%;
+  height: 80rpx;
+  font-size: 26rpx;
+}
+
+.goods .goods-box .goods-item .goods-info .b text:first-child {
+  float: left;
+  color: #999;
+}
+
+.goods .goods-box .goods-item .goods-info .b text:last-child {
+  float: right;
+  color: #666;
+}
+
+.order {
+  background-color: #fff;
+  margin-top: 30rpx;
+  padding-bottom: 20rpx;
+}
+
+.order .list {
+  width: 100%;
+}
+
+.order .list .list-box {
+  width: 92%;
+  height: auto !important;
+  height: 80rpx;
+  min-height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 auto;
+  font-size: 28rpx;
+  color: #333;
+  border-bottom: 1px solid #ebedf0;
+  padding: 10rpx 0;
+}
+
+.order .list .list-box view {
+  display: inline-block;
+}
+
+.order .list .list-box view:first-child {
+  float: left;
+}
+
+.order .list .list-box view:last-child {
+  float: right;
+}
+
+.order .list .list-box textarea {
+  height: 150rpx;
+}
+
+.btn {
+  width: 90%;
+  margin: 40rpx auto;
+  margin-top: 40rpx;
+}
+
+.btn view {
+  background-color: #ee0a24;
+  border: 1px solid #ee0a24;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+}
+
+.rate-box {
+  min-height: 1.4em;
+  display: flex;
+  align-items: center;
+}
+
+.rate {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.2em;
+  transition: all .15s linear;
+  padding: 0 8rpx;
+}
+
+.rate.scale {
+  transform: scale(1.1);
+}
+.iconrate-copy-color { color: #999; }
+.iconrate-copy-color-active { color: #FFB700; }

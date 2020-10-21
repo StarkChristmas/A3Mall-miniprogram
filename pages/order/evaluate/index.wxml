@@ -1,0 +1,79 @@
+<view class="wrap">
+		<view>
+		
+			<view class="goods">
+				<view class="title">
+					<text>共{{order.item.length}}件商品</text>
+				</view>
+				<view class="goods-box">
+					<view
+						class="goods-item clearfix"
+						wx:for="{{order.item}}" 
+            wx:key="index" 
+            wx:for-item="value"
+					>
+
+						<view class="goods-img">
+							<image src="{{ value.thumb_image }}"></image>
+						</view>
+
+						<view class="goods-info">
+							<view class="t">
+								<text>{{value.title}}</text>
+								<text>￥{{value.sell_price}}</text>
+							</view>
+							<view class="b">
+								<text>{{value.spec}}</text>
+								<text>× {{value.nums}}</text>
+							</view>
+						</view>
+
+					</view>
+
+				</view>
+			</view>
+
+			<view class="order">
+				<view class="list clearfix">
+					<view class="list-box clearfix">
+						<view>商品金额：</view>
+						<view>{{order.real_amount}}</view>
+					</view>
+					<view class="list-box clearfix">
+						<view>运费金额：</view>
+						<view>{{order.payable_freight}}</view>
+					</view>
+					<view class="list-box clearfix">
+						<view>订单总额：</view>
+						<view class="money">{{order.order_amount}}</view>
+					</view>
+					<view class="list-box clearfix">
+						<view>商品评分：</view>
+						<view>
+							<view
+								class="rate-box"
+							>
+								<view
+									class="rate"
+									wx:for="{{rateList}}" 
+									wx:key="index" 
+									wx:for-item="value"
+									bindtap="onRateItem"
+									data-value="{{ value }}"
+								>
+									<text class="iconfont iconrate-copy {{ rate >= value ? 'iconrate-copy-color-active' : 'iconrate-copy-color'}}"></text>
+								</view>
+							</view>
+						</view>
+					</view>
+					<view class="list-box clearfix">
+						<textarea bindinput="bindTextInput" placeholder="请填写商品评价" maxlength="200"></textarea>
+					</view>
+				</view>
+			</view>
+
+			<view class="btn">
+				<view bindtap="onEvaluateSubmit">提交</view>
+			</view>
+		</view>
+	</view>

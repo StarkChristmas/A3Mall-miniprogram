@@ -1,0 +1,9 @@
+<view class="numbox">
+  <view bindtap="calcValue" data-type="minus" class="numbox-minus">
+    <text class="numbox--text {{ inputValue <= min || disabled ? 'numbox--disabled' : '' }}">-</text>
+  </view>
+  <input disabled="{{ disabled }}" bindinput="onBindInput" class="numbox-value" type="number" value="{{inputValue}}" />
+  <view bindtap="calcValue" data-type="plus" class="numbox-plus">
+    <text class="numbox--text {{ inputValue >= max || disabled ? 'numbox--disabled' : '' }}">+</text>
+  </view>
+</view> 

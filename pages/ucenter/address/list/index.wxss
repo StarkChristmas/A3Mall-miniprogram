@@ -1,0 +1,81 @@
+.address-list .address-box{
+  background-color: #fff;
+  width: 100%;
+  height: auto !important;
+  height: 260rpx;
+  float: left;
+  margin-top: 30rpx;
+  min-height: 260rpx;
+}
+.address-list .address-box .t{
+  padding: 30rpx;
+  border-bottom: 2rpx solid #e8e8e8;
+  color:#777;
+  font-size: 30rpx;
+}
+.address-list .address-box .t .t-1{
+  height: 52rpx;
+  min-height: 52rpx;
+}
+.address-list .address-box .t .t-1 text:first-child{
+  float: left;
+}
+.address-list .address-box .t .t-1 text:last-child{
+  float: right;
+}
+.address-list .address-box .b{
+  height: 100rpx;
+  color:#777;
+  font-size: 30rpx;
+  padding: 0 30rpx;
+}
+.address-list .address-box .b .b-1 {
+  float: left;
+  display: inline-block;
+  color: #b91922;
+  border: 2rpx solid #b91922;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  width: 130rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  margin-top: 24rpx;
+}
+.address-list .address-box .b .b-2{
+  float: right;
+}
+.address-list .address-box .b .b-2 text {
+  display: inline-block;
+  color: #777777;
+  border: 2rpx solid #777777;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  width: 130rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  margin-top: 24rpx;
+  margin-left: 20rpx;
+}
+
+.bottom-placeholder { width: 100%; display: block; height: 120rpx; margin: 20rpx 0; }
+.btn{
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 120rpx;
+  padding-top: 20rpx;
+}
+.btn .add{
+  display: block;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background-color: #b91922;
+  color: #fff;
+  margin: 0 30rpx;
+  border-radius: 10rpx;
+}

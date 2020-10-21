@@ -1,0 +1,151 @@
+<view class="wrap">
+  <view>
+    <view class="top">
+      <view class="status">
+        <steps options="{{ stepsOptions }}" active-color="#07c160" active="{{ active }}"></steps>
+      </view>
+
+      <view class="address">
+        <view class="info">
+          <text>收件人：{{order.accept_name}}</text>
+          <text>手机号：{{order.mobile}}</text>
+        </view>
+        <view class="address-info">
+          {{order.region}} {{order.address}}
+        </view>
+      </view>
+    </view>
+    
+    
+    <view class="goods">
+      <view class="title">
+        <text>共{{order.item.length}}件商品</text>
+      </view>
+      <view class="goods-box">
+        <view
+          class="goods-item clearfix"
+          wx:for="{{order.item}}" 
+          wx:key="index" 
+          wx:for-item="value"
+          bindtap="go"
+          data-url="/pages/goods/view/index?id={{ value.goods_id }}"
+        >
+
+          <view class="goods-img">
+            <image src="{{ value.thumb_image }}"></image>
+          </view>
+
+          <view class="goods-info">
+            <view class="t">
+              <text>{{value.title}}</text>
+              <text>￥{{value.sell_price}}</text>
+            </view>
+            <view class="b">
+              <text>{{value.spec}}</text>
+              <text>× {{value.nums}}</text>
+            </view>
+          </view>
+
+        </view>
+
+      </view>
+    </view>
+    
+    <view class="order">
+      <view class="title">
+        <text>订单信息</text>
+      </view>
+      <view class="list clearfix">
+        <view class="list-box clearfix">
+          <view>订单编号：</view>
+          <view class="money">{{order.order_no}}</view>
+        </view>
+        <view class="list-box clearfix">
+          <view>下单时间：</view>
+          <view>{{order.create_time}}</view>
+        </view>
+        <view class="list-box clearfix">
+          <view>订单类型：</view>
+          <view>{{order.type}}</view>
+        </view>
+        <view class="list-box clearfix">
+          <view>支付状态：</view>
+          <view class="money">{{order.pay_status}}</view>
+        </view>
+        <view class="list-box clearfix">
+          <view>支付方式：</view>
+          <view class="money">{{order.pay_type}}</view>
+        </view>
+      </view>
+    </view>
+    
+    <view class="order">
+      <view class="list clearfix">
+        <view class="list-box clearfix">
+          <view>商品金额：</view>
+          <view>{{order.real_amount}}</view>
+        </view>
+        <view class="list-box clearfix">
+          <view>运费金额：</view>
+          <view>{{order.payable_freight}}</view>
+        </view>
+        <view class="list-box clearfix">
+          <view>订单总额：</view>
+          <view class="money">{{order.order_amount}}</view>
+        </view>
+      </view>
+    </view>
+    
+
+    <view class="order" wx:if="{{ order.order_status==1 }}">
+      <view class="title">
+        <text>支付方式</text>
+      </view>
+      
+      <view class="payment-box">
+        <view class="payment-item" bindtap="onSelectPayment" data-pay="wechat">
+          <view><text class="wechat"></text></view>
+          <view class="{{ payment == 'wechat' ? 'activeColor' : '' }}">微信支付</view>
+          <view class="{{ payment == 'wechat' ? 'active' : '' }}"><text class="check"></text></view>
+        </view>
+        <view class="payment-item" bindtap="onSelectPayment" data-pay="balance">
+          <view><text class="balance"></text></view>
+          <view class="{{ payment == 'balance' ? 'activeColor' : '' }}">余额支付<text>可用余额: ￥{{order.users_price}}元</text></view>
+          <view class="{{ payment == 'balance' ? 'active' : '' }}"><text class="check"></text></view>
+        </view>
+      </view>
+      
+    </view>
+    
+    <view wx:if="{{ active != 4 }}">
+      <view class="operation-placeholder"></view>
+      <view class="operation">
+        <text class="cancel" wx:if="{{ order.order_status==1 }}" bindtap="cancel">取消订单</text>
+        <text class="pay" wx:if="{{ order.order_status==1 }}" bindtap="goPay">立即付款</text>
+
+        <text 
+        class="confirm" 
+        wx:if="{{ order.order_status == 2 || order.order_status==3 || order.order_status==4 }}" 
+        bindtap="go"
+        data-url="/pages/order/confirm_delivery/index?id={{ orderId }}"
+        >确认收货</text>
+        <text 
+        class="refund" 
+        wx:if="{{ order.order_status == 2 || order.order_status==3 || order.order_status==4 }}" 
+        click="refund"
+        bindtap="go"
+        data-url="/pages/order/refund/index?id={{ orderId }}"
+        >申请退款</text>
+
+        <text 
+        class="evaluate" 
+        wx:if="{{ order.order_status==5 }}" 
+        bindtap="go"
+        data-url="/pages/order/evaluate/index?id={{ orderId }}"
+        >待评价</text>
+      </view>
+    </view>
+    
+  </view>
+  
+</view>

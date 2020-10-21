@@ -1,0 +1,72 @@
+.search-wrap {
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  height: 90rpx;
+}
+
+.field-box {
+  width: 650rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  float: left;
+  margin-top: 13rpx;
+}
+
+.search-box::before {
+  position: absolute;
+  content: "\e629";
+  left: 35rpx;
+  top: 18rpx;
+  font-size: 38rpx;
+  color: #aaa;
+}
+
+.field-box input {
+  width: 84%;
+  margin: 0 2.5%;
+  border: 1px solid #ddd;
+  border-radius: 15rpx;
+  height: 65rpx;
+  font-size: 28rpx;
+  padding-left: 70rpx;
+}
+
+.field-btn {
+  width: 100rpx;
+  height: 65rpx;
+  line-height: 65rpx;
+  float: right;
+  margin-top: 13rpx;
+}
+
+.field-btn view { 
+  color: #333; text-align: center;
+  font-size: 28rpx;
+}
+
+.search-host-list {
+  width: 100%; margin-top: 20rpx;
+  height: auto !important;
+  height: 200rpx; min-height: 200rpx;
+  padding: 20rpx 0;
+  background-color: #fff;
+}
+
+.host-list .title{
+  float: left;
+  color: #666;
+  font-size: 32rpx;
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-indent: 20rpx;
+}
+.host-list .list text{
+  font-size: 28rpx;
+  padding: 10rpx 20rpx;
+  background-color: #f1f1f1;
+  color: #333;
+  margin: 10rpx 20rpx;
+  border-radius: 20rpx;
+  float: left;
+}

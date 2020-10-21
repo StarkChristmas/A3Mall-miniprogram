@@ -1,0 +1,69 @@
+.numbox {
+  display: flex;
+  flex-direction: row;
+  height: 25px;
+  line-height: 25px;
+  width: 100px;
+  margin-top: 5rpx;
+}
+
+.numbox-value {
+  background-color: #fff;
+  width: 40px;
+  height: 25px;
+  text-align: center;
+  font-size: 28rpx;
+  border-width: 1rpx;
+  border-style: solid;
+  border-color: #c8c7cc;
+  border-left-width: 0;
+  border-right-width: 0;
+  color: #666;
+}
+
+.numbox-minus {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+  color: #333;
+  background-color: #f8f8f8;
+  border-width: 1rpx;
+  border-style: solid;
+  border-color: #c8c7cc;
+  border-top-left-radius: 6rpx;
+  border-bottom-left-radius: 6rpx;
+  border-right-width: 0;
+}
+
+.numbox-plus {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+  color: #333;
+  background-color: #f8f8f8;
+
+  border-width: 1rpx;
+  border-style: solid;
+  border-color: #c8c7cc;
+  border-top-right-radius: 6rpx;
+  border-bottom-right-radius: 6rpx;
+  background-color: #f8f8f8;
+  border-left-width: 0;
+}
+
+.numbox--text {
+  font-size: 40rpx;
+  color: #333;
+}
+
+.numbox--disabled {
+  color: #c0c0c0;
+}

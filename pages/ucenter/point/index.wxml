@@ -1,0 +1,33 @@
+<view>
+  <view class="top">
+    <view class="top-box">
+      <image src="/images/point-bg.png"></image>
+      <text class="t">可用积分</text>
+      <text class="z">{{ point }}</text>
+    </view>
+  </view>
+
+  <view class="list-wrap">
+    <view class="point-list">
+      <view 
+      class="point-item clearfix" 
+      wx:for="{{result}}" 
+      wx:key="index" 
+      wx:for-item="item"
+      >
+        <view class="t">
+          <text>{{item.time}}</text>
+          <text>类型：{{item.operation}}</text>
+        </view>
+        <view class="m">
+          {{item.description}}
+        </view>
+        <view class="b">
+          <text>{{item.point}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <loadmore status="{{pageStatus}}"></loadmore>
+</view>

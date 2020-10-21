@@ -1,0 +1,9 @@
+<!--components/load-more/index.wxml-->
+<view class="load-more" wx:if="{{status == 1 || status == 2}}">
+  <view wx:if="{{status == 1}}">
+    加载内容中
+  </view>
+  <view wx:if="{{status == 2}}">
+    没有更多内容
+  </view>
+</view>

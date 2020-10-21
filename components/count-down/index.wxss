@@ -1,0 +1,45 @@
+.aaa-count-down .day,
+.aaa-count-down .hour,
+.aaa-count-down .minute,
+.aaa-count-down .second,
+.aaa-count-down .day,
+.aaa-count-down .day { float: left; }
+
+.simple .wrap-simple{
+  color: #fff;
+  height: 140rpx;
+  font-size: 26rpx;
+  padding-right: 32rpx;
+  padding-top: 20rpx;
+}
+.simple .wrap-simple .before {
+  color: #ffed51;
+  display: block;
+  width: 100%;
+}
+.simple .wrap-simple .day text,
+.simple .wrap-simple .hour text,
+.simple .wrap-simple .minute text,
+.simple .wrap-simple .second text {
+  display: inline-block;
+}
+.simple .wrap-simple .day text:first-child,
+.simple .wrap-simple .hour text:first-child,
+.simple .wrap-simple .minute text:first-child,
+.simple .wrap-simple .second text:first-child {
+  background-color: #ffc241;
+  color: #000;
+  border-radius: 6rpx;
+  min-width: 40rpx;
+  height: 36rpx;
+  text-align: center;
+}
+.simple .wrap-simple .day text:last-child,
+.simple .wrap-simple .hour text:last-child,
+.simple .wrap-simple .minute text:last-child,
+.simple .wrap-simple .second text:last-child {
+  color: #ffc241;
+  padding: 0 4rpx;
+}
+
+.simple .tips-simple{ color: #ffc241; padding-right: 32rpx; height: 140rpx; line-height: 140rpx }

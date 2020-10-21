@@ -1,0 +1,18 @@
+/**app.wxss**/
+@import "/css/style.wxss";
+
+page {
+  background: #f8f8f8;
+}
+
+.container {
+  -webkit-font-smoothing: antialiased;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}

@@ -1,0 +1,33 @@
+<view>
+
+    <view class="address-list clearfix">
+        <view 
+        class="address-box" 
+        wx:for="{{result}}" 
+        wx:key="index" 
+        wx:for-item="item"
+        >
+            <view class="t">
+                <view class="t-1">
+                    <text>{{item.name}}</text>
+                    <text>{{item.tel}}</text>
+                </view>
+                <view class="desc">{{item.address}}</view>
+            </view>
+            <view class="b">
+                <view v-if="item.is_default" class="b-1">默认地址</view>
+                <view class="b-2">
+                    <text bindtap="onSelected" data-id="{{item.id}}" wx:if="{{isSelected}}">选择</text>
+                    <text bindtap="onEdit" data-id="{{item.id}}">修改</text>
+                    <text bindtap="onDelete" data-id="{{item.id}}">删除</text>
+                </view>
+            </view>
+        </view>
+        
+    </view>
+
+    <view class="bottom-placeholder"></view>
+    <view class="btn">
+        <view class="add" bindtap="onAdd">新增地址</view>
+    </view>
+</view>

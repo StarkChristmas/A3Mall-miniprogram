@@ -1,0 +1,40 @@
+.wrap{
+  background-color: #fff;
+  height: 100vh;
+}
+.c{
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+.top{
+  margin-top: 60rpx;
+  text-align: center;
+}
+.top image {
+  width: 400rpx;
+  height: 400rpx;
+}
+.title{
+  font-size: 46rpx;
+  color: #333;
+  margin-top: 70rpx;
+}
+.intro{
+  margin-top: 60rpx;
+  color: #666;
+}
+.btn{
+  margin-top: 90rpx;
+}
+.btn text{
+  width: 100px;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #b71c1c;
+  font-size: 30rpx;
+  display: inline-block;
+  border-radius: 10rpx;
+}

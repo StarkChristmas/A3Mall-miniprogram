@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "物流查询",
+  "navigationBarBackgroundColor": "#b91922",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "steps": "/components/steps/index"
+  }
+}

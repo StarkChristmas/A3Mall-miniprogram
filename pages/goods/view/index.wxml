@@ -1,0 +1,180 @@
+<view>
+  <view class="goods-wrap">
+    <view class="swiper-inner-box">
+      <swiper
+        autoplay="true"
+        interval="3000"
+        circular="true"
+        current="{{ current }}"
+        bindchange="onSwiperChange"
+        class="swiper-box"
+      >
+        <swiper-item 
+          wx:for="{{images}}" 
+          wx:key="index" 
+          wx:for-item="item" 
+        >
+          <image src="{{item}}"></image>
+        </swiper-item>
+      </swiper>
+      
+      <view class="custom-indicator">
+        {{ current + 1 }} / {{ images.length }}
+      </view>
+    </view>
+
+    <view class="goods-price">
+      <image src="/images/bg/goods-bg.png"></image>
+      <view class="price">
+        <view>￥<text>{{ products.sell_price }}</text></view>
+        <view>原价格<text>￥{{ products.market_price }}</text></view>
+      </view>
+    </view>
+
+    <view class="goods-info clearfix">
+      <view class="title">
+        {{ products.title }}
+      </view>
+      <view class="goods-info-box">
+        <text>库存: {{ products.store_nums }}件</text>
+        <text>销量: {{ products.sale }}件</text>
+      </view>
+    </view>
+
+    <view class="goods-comments clearfix">
+      <view class="title">
+        <text>商品评价</text>
+        <text wx:if="{{ comments.length > 0 }}">更多 &gt;</text>
+      </view>
+      <view class="comments-empty" wx:if="{{ comments.length <= 0 }}">该商品还没有评论哦！</view>
+      <view
+        class="goods-comments-list clearfix"
+          wx:if="{{ comments.length > 0 }}"
+      >
+        <view
+          class="goods-comments-box clearfix"
+          wx:for="{{comments}}" 
+          wx:key="index" 
+          wx:for-item="item" 
+        >
+          <view class="t">
+            <view class="u">
+              <view><image src="{{item.avatar}}"></image></view>
+              <view>{{item.username}}</view>
+            </view>
+            <view class="time">{{item.time}}</view>
+          </view>
+          <view class="c">{{item.content}}</view>
+          <view class="d" v-if="item.reply_content">
+            <view class="d-1">商家回复</view>
+            <view class="d-2">{{item.reply_content}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="goods-content clearfix">
+      <view class="title">图文详情</view>
+      <view class="clearfix">
+        <rich-text nodes="{{products.content}}"></rich-text>
+      </view>
+    </view>
+  </view>
+
+  <view class="goods-line-box"></view>
+
+  <view class="goods-action">
+    <view class="goods-action-icon">
+        <navigator url="/pages/index/index" open-type="switchTab" hover-class="none">
+          <view class="goods-action-btn">
+              <view class="icon iconfont iconhome"></view>
+          </view>
+          <view><text :class="{active:active}">首页</text></view>
+        </navigator>
+    </view>
+
+    <view class="goods-action-icon">
+        <navigator url="/pages/cart/index/index" open-type="switchTab" hover-class="none">
+          <view class="goods-action-btn">
+              <view class="icon iconfont iconkyShoppingCart"></view>
+              <text wx:if="{{ cartCount }}">{{cartCount}}</text>
+          </view>
+          <view><text>购物车</text></view>
+        </navigator>
+    </view>
+
+    <view class="goods-action-icon" bindtap="onFavorite">
+        <view class="goods-action-btn">
+            <view class="icon iconfont iconshoucang {{ collect ? 'active' : '' }}"></view>
+        </view>
+        <view><text>收藏</text></view>
+    </view>
+
+    <view bindtap="onCart" class="goods-action-button button-cart">
+        加入购物车
+    </view>
+
+    <view bindtap="onBuy" class="goods-action-button button-buy">
+        立即购买
+    </view>
+  </view>
+  
+  <!-- START SKU -->
+  <view class="sku-action {{ isSkuStatus==true ? 'sku-show' : '' }}">
+    <view class="sku-header">
+        <view class="sku-header-image">
+            <image src="{{ products.photo }}"></image>
+        </view>
+        <view class="sku-header-goods-info">
+            <view class="sku-header-goods-price">
+                <text class="symbol">￥</text>
+                <text class="price">{{goodsPrice||""}}</text>
+            </view>
+            <view class="sku-header-item">
+            <view class="sku-stock">
+              剩余<text class="stock-num">{{goodsStockNumber||goods.store_nums||"0"}}</text>件
+            </view>
+            </view>
+            <view class="sku-header-item">{{specSelected||""}}</view>
+        </view>
+    </view>
+
+    <view class="sku-body" :style="max-height: {{ maxHeight }}px">
+      <view class="sku-group-container">
+          <view 
+          class="sku-row" 
+          wx:for="{{attribute}}" 
+          wx:key="index" 
+          wx:for-item="item" 
+          >
+              <view class="sku-row-title">{{item.name}}</view>
+              <view
+              wx:for="{{item.list}}" 
+              wx:key="childIndex" 
+              wx:for-item="childItem" 
+              class="sku-row-item {{ childItem.selected && childItem.disable == false ? 'sku-row-item-active' : '' }} {{childItem.disable ? 'sku-row-item-disable' : ''}}"
+              >
+                  <text
+                  class="sku-row-item-name"
+                  bindtap="onSelected"
+                  data-id="{{ item.id }}"
+                  data-childid="{{ childItem.id }}"
+                  >{{childItem.value}}</text>
+              </view>
+
+          </view>
+      </view>
+      <view class="sku-stepper-stock">
+          <view class="sku-stepper-title">购买数量</view>
+          <view class="stepper sku-stepper">
+              <view bindtap="minus" class="stepper-minus {{ number<=1 ? 'stepper-minus-disabled' : '' }}"></view>
+              <input type="number" class="stepper-input" value="{{number}}" disabled="disabled" />
+              <view bindtap="plus" class="stepper-plus {{ number >= goodsStockNumber ? 'stepper-minus-disabled' : '' }}"></view>
+          </view>
+      </view>
+      <view style="width: 100%;height: 110rpx;"></view>
+    </view>
+    <text id="close" class="iconfont icongary" bindtap="onClose"></text>
+  </view>
+  <!-- END SKU -->
+</view>

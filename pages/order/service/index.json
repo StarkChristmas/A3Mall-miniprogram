@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "售后列表",
+  "navigationBarBackgroundColor": "#b91922",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "loadmore": "/components/load-more/index"
+  }
+}

@@ -1,0 +1,86 @@
+.online-box{ width: 90%; margin: 0 5%; margin-top: 20px; }
+.top{
+  width: 100%;
+  height: 270rpx;
+  background-color: #fff;
+  padding-top: 20rpx;
+  border-top: 1px solid #ebedf0;
+}
+.top .top-box {
+  width: 90%;
+  height: 250rpx;
+  margin: 0 auto;
+  border-radius: 20rpx;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+.top .top-box image {
+  width: 100%;
+  height: 250rpx;
+}
+.top .top-box text {
+  display: block;
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.top .top-box .t {
+  top: 60rpx;
+  font-size: 30rpx;
+}
+.top .top-box .z {
+  top: 120rpx;
+  font-size: 50rpx;
+}
+.list-wrap{
+  margin-top: 20rpx;
+}
+.list-wrap .point-list{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-size: 28rpx;
+}
+.list-wrap .point-list .point-item{
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+  border-radius: 12rpx;
+  height: auto !important;
+  height: 260rpx;
+  min-height: 260rpx;
+  background-color: #fff;
+  border-bottom: 2rpx solid #eee;
+}
+.list-wrap .point-list .point-item .t{
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid #eee;
+}
+.list-wrap .point-list .point-item .t text:first-child{
+  float: left;
+  padding-left: 20rpx;
+}
+.list-wrap .point-list .point-item .t text:last-child{
+  float: right;
+  padding-right: 20rpx;
+}
+.list-wrap .point-list .point-item .m{
+  padding: 10rpx 20rpx;
+  display: block;
+  height: auto !important;
+  height: 100rpx;
+  min-height: 100rpx;
+}
+.list-wrap .point-list .point-item .b{
+  height: 60rpx;
+  line-height: 60rpx;
+  border-top: 2rpx solid #eee;
+}
+.list-wrap .point-list .point-item .b text{
+  float: right;
+  margin-right: 20rpx;
+}

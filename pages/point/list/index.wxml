@@ -1,0 +1,38 @@
+<view>
+  <view class="navbar">
+      <view class="nav-item {{filterIndex === 0 ? 'current' : ''}}" bindtap="tabClick" data-type="0">
+          综合排序
+      </view>
+      <view class="nav-item {{filterIndex === 1 ? 'current' : ''}}" bindtap="tabClick" data-type="1">
+          销量优先
+      </view>
+      <view class="nav-item {{filterIndex === 2 ? 'current' : ''}}" bindtap="tabClick" data-type="2">
+          <view>积分</view>
+          <view class="arrow-box">
+              <text class="icon iconfont iconarrow-top icon-arrow-up {{priceOrder === 1 && filterIndex === 2 ? 'active' : ''}} {{priceOrder === 1 && filterIndex === 2 ? 'icon-arrow-up-active' : ''}}"></text>
+              <text class="icon iconfont iconarrow-top icon-arrow-down {{priceOrder === 2 && filterIndex === 2 ? 'active' : ''}} {{priceOrder === 1 && filterIndex === 2 ? 'icon-arrow-down-active' : ''}}"></text>
+          </view>
+      </view>
+  </view>
+
+  <view style="height: 100rpx; background-color: #b91922"></view>
+
+  <view class="goods-list-box">
+    <view
+      class="goods-list-item-box"
+      wx:for="{{result}}" 
+      wx:key="index" 
+      wx:for-item="item"
+      data-id="{{item.id}}"
+      bindtap="jump"
+    >
+      <view class="goods-list-item-wrap">
+        <view><image src="{{item.photo}}"></image></view>
+        <view>{{ item.title }}</view>
+        <view>{{ item.price }} 分</view>
+      </view>
+    </view>
+  </view>
+
+  <loadmore status="{{pageStatus}}"></loadmore>
+</view>

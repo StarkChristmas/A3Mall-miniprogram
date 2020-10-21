@@ -1,0 +1,63 @@
+<view>
+  <view class="header">
+      <!-- <view class="rechange">充值 ></view> -->
+      <view class="info">
+        <view>总资产(元)</view>
+        <view>{{amount}}</view>
+        <view>
+          <text>累计充值(元)：{{rechange_amount||"0.00"}}</text>
+          <text>|</text>
+          <text>累计消费(元)：{{consume_amount||"0.00"}}</text>
+        </view>
+      </view>
+	</view>
+
+  <view class="receive">
+    <view class="c">
+      <view>
+        <navigator url="/pages/point/list/index">
+          <image src="/images/wallet/4.png"></image>
+          <text>积分商品兑换</text>
+          <text>赚积分抵现金</text>
+        </navigator>
+      </view>
+    </view>
+    <view class="c">
+      <view>
+        <navigator url="/pages/coupon/index">
+          <image src="/images/wallet/5.png"></image>
+          <text>领取优惠券</text>
+          <text>满减享优惠</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  <view class="guide">
+    <view class="guide-box">
+      <navigator url="/pages/regiment/list/index">
+        <view><image src="/images/wallet/7.png"></image></view>
+        <view>团购</view>
+      </navigator>
+    </view>
+    <view class="guide-box">
+      <navigator url="/pages/second/list/index">
+        <view><image src="/images/wallet/8.png"></image></view>
+        <view>秒杀</view>
+      </navigator>
+    </view>
+    <view class="guide-box">
+      <navigator url="/pages/point/list/index">
+        <view><image src="/images/wallet/9.png"></image></view>
+        <view>积分商品</view>
+      </navigator>
+    </view>
+    <view class="guide-box">
+      <navigator url="pages/special/list/index">
+        <view><image src="/images/wallet/10.png"></image></view>
+        <view>会员特价</view>
+      </navigator>
+    </view>
+  </view>
+
+</view>

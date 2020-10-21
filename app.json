@@ -1,0 +1,81 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/category/index",
+    "pages/cart/index/index",
+    "pages/public/login/index",
+    "pages/goods/list/index",
+    "pages/goods/view/index",
+    "pages/search/index/index",
+    "pages/news/view/detail",
+    "pages/search/list/index",
+    "pages/coupon/index",
+    "pages/regiment/list/index",
+    "pages/regiment/view/index",
+    "pages/second/list/index",
+    "pages/second/view/index",
+    "pages/special/list/index",
+    "pages/special/view/index",
+    "pages/point/list/index",
+    "pages/point/view/index",
+    "pages/news/list/index",
+    "pages/ucenter/index/index",
+    "pages/ucenter/collect/index",
+    "pages/ucenter/address/editor/index",
+    "pages/ucenter/address/list/index",
+    "pages/cart/confirm/index",
+    "pages/ucenter/setting/index",
+    "pages/ucenter/point/index",
+    "pages/ucenter/wallet/index/index",
+    "pages/ucenter/coupon/index",
+    "pages/cart/info/index",
+    "pages/cart/msg/index",
+    "pages/order/detail/index",
+    "pages/order/list/index",
+    "pages/order/refund/index",
+    "pages/order/service/index",
+    "pages/order/express/index",
+    "pages/order/evaluate/index",
+    "pages/order/confirm_delivery/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "A3Mall - 素烟姿",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#b71c1c",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabbar/menu-1.png",
+        "selectedIconPath": "images/tabbar/menu-active-1.png"
+      },
+      {
+        "pagePath": "pages/category/index",
+        "text": "分类",
+        "iconPath": "images/tabbar/menu-2.png",
+        "selectedIconPath": "images/tabbar/menu-active-2.png"
+      },
+      {
+        "pagePath": "pages/cart/index/index",
+        "text": "购物车",
+        "iconPath": "images/tabbar/menu-3.png",
+        "selectedIconPath": "images/tabbar/menu-active-3.png"
+      },
+      {
+        "pagePath": "pages/ucenter/index/index",
+        "text": "我的",
+        "iconPath": "images/tabbar/menu-4.png",
+        "selectedIconPath": "images/tabbar/menu-active-4.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

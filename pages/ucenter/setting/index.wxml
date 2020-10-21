@@ -1,0 +1,43 @@
+<view class="wrap">
+		
+  <view class="avatar">
+      <open-data class="" lang="zh_CN" type="userAvatarUrl"></open-data>
+  </view>
+  
+  <view class="theForm">
+    <form>
+      <view class="fields-box">
+        <view>昵称</view>
+        <view>
+          <input type="text" name="username" bindinput="onUserHandle" value="{{username}}" placeholder="昵称" />
+        </view>
+      </view>
+      <view class="fields-box">
+        <view>性别</view>
+        <view>
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <input type="text" name="sex" disabled="true" value="{{sex}}" placeholder="性别" />
+          </picker>
+        </view>
+        
+      </view>
+      <view class="fields-box">
+        <view>生日</view>
+        <view>
+          <picker mode="date" value="{{birthday}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">
+            <view class="picker">
+              <input type="text" name="birthday" disabled="true" value="{{birthday}}" placeholder="生日" />
+            </view>
+          </picker>
+        </view>
+      </view>
+      
+      <view class="btn">
+        <view bindtap="onSubmit">提 交</view>
+      </view>
+      
+    </form>
+  </view>
+  
+  
+</view>

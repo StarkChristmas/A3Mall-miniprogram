@@ -1,0 +1,2 @@
+/* components/load-more/index.wxss */
+.load-more { font-size: 28rpx; width: 100%; height: 100rpx; line-height: 100rpx; text-align: center; }

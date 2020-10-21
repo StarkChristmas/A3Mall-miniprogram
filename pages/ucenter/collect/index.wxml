@@ -1,0 +1,32 @@
+<view>
+  <view class="collect clearfix">
+    <checkbox-group bindchange="checkboxChange">
+      <view class="collect-list">
+        <view 
+        class="item-box" 
+        wx:for="{{result}}" 
+        wx:key="index" 
+        wx:for-item="item"
+        >
+          <view class="l">
+            <view class="item-check">
+              <checkbox class="c-check" value="{{item.id}}" />
+            </view>
+            <view class="item-image">
+              <image src="{{item.thumb}}"></image>
+            </view>
+          </view>
+          <view class="r">
+            <view class="title">{{ item.title }}</view>
+            <view class="price">￥{{ item.price }}</view>
+          </view>
+        </view>
+      </view>
+    </checkbox-group>
+  </view>
+
+  <view class="operation-placeholder" wx:if="{{ isShow }}"></view>
+  <view class="operation" wx:if="{{ isShow }}">
+    <text class="iconfont iconguanli" bindtap="onDeleteCollect"></text>
+  </view>
+</view>

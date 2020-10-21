@@ -1,0 +1,132 @@
+.header{
+  width: 100%;
+  height: 400rpx;
+  position: relative;
+  z-index: 1;
+  background-color: #b91922;
+}
+.header .rechange{
+  position: absolute;
+  top: 135rpx;
+  right: 0;
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #cb565c;
+  color: #fff;
+  border-top-left-radius: 100rpx;
+  border-bottom-left-radius: 100rpx;
+  text-align: center;
+  z-index: 9999;
+}
+.header .info {
+  position: absolute;
+  top: 75rpx;
+  left: 30rpx;
+  color: #fff;
+}
+.header .info view:nth-child(1){
+  font-size: 35rpx;
+}
+.header .info view:nth-child(2){
+  font-size: 58rpx;
+  padding-top: 20rpx;
+}
+.header .info view:nth-child(3){
+  font-size: 26rpx;
+  padding-top: 30rpx;
+}
+.header .info view:nth-child(3) text:nth-child(2){
+  padding: 0 10rpx;
+  position: relative;
+  top: -2rpx;
+}
+.log {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  background-color: #fff;
+}
+.log .log-box {
+  width: 33.333%;
+  height: 200rpx;
+  font-size: 30rpx;
+}
+.log .log-box view {
+  display: block;
+  text-align: center;
+}
+.log .log-box view:first-child{
+  margin-top: 40rpx;
+}
+.log .log-box view:last-child {
+  margin-top: 20rpx;
+}
+.log .log-box:nth-child(1) image { width: 62rpx; height: 58rpx; }
+.log .log-box:nth-child(2) image { width: 54rpx; height: 62rpx; }
+.log .log-box:nth-child(3) image { width: 72rpx; height: 56rpx; }
+
+
+.receive{
+  width: 100%;
+  height: 180rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.receive .c {
+  width: 50%;
+  height: 180rpx;
+}
+.receive .c view{
+  position: relative;
+  margin-top: 40rpx;
+  margin-left: 120rpx;
+}
+.receive .c view text:first-child { font-size: 32rpx; color: #b91922 }
+.receive .c view text:last-child { padding-top: 8rpx; font-size: 24rpx; color: #999999; }
+.receive .c view:first-child image {
+  position: absolute;
+  left: -80rpx;
+  top: 12rpx;
+  content: " ";
+  width: 60rpx;
+  height: 66rpx;
+}
+.receive .c view:last-child image {
+  position: absolute;
+  left: -64rpx;
+  top: -2rpx;
+  content: " ";
+  width: 46rpx;
+  height: 82rpx;
+}
+.receive .c view text {
+  display: block;
+}
+
+.guide {
+  width: 100%;
+  margin-top: 20rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 20rpx;
+}
+.guide .guide-box {
+  width: 50%;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 4rpx solid #f9f9f9;
+  padding: 40rpx 0;
+  font-size: 32rpx;
+}
+.guide .guide-box image { width: 90rpx; height: 90rpx; display: block; }
+.guide .guide-box view {
+    float: left;
+}
+.guide .guide-box view:first-child { margin-left: 70rpx; }
+.guide .guide-box view:last-child { margin-left: 30rpx; }
