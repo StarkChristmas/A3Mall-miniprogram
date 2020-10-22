@@ -43,6 +43,16 @@
  <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=de316f1a1dbf61859529484891ee50369e3c2bc6fe37e15bb94f8bf731cc3482"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="A3Mall开发交流群" title="A3Mall开发交流群"></a>
 
 ![输入图片说明](https://gitee.com/xzncit/A3Mall-miniprogram/raw/master/readme/1.jpg "1.jpg")
+![输入图片说明](https://gitee.com/xzncit/A3Mall-miniprogram/raw/master/readme/a/0.png "0.png")
+![输入图片说明](https://gitee.com/xzncit/A3Mall-miniprogram/raw/master/readme/a/1.png "1.png")
+![输入图片说明](https://gitee.com/xzncit/A3Mall-miniprogram/raw/master/readme/a/2.png "2.png")
+![输入图片说明](https://gitee.com/xzncit/A3Mall-miniprogram/raw/master/readme/a/3.png "3.png")
+![输入图片说明](https://gitee.com/xzncit/A3Mall-miniprogram/raw/master/readme/a/4.png "4.png")
+![输入图片说明](https://gitee.com/xzncit/A3Mall-miniprogram/raw/master/readme/a/5.png "5.png")
+![输入图片说明](https://gitee.com/xzncit/A3Mall-miniprogram/raw/master/readme/a/6.png "6.png")
+![输入图片说明](https://gitee.com/xzncit/A3Mall-miniprogram/raw/master/readme/a/7.png "7.png")
+![输入图片说明](https://gitee.com/xzncit/A3Mall-miniprogram/raw/master/readme/a/8.png "8.png")
+![输入图片说明](https://gitee.com/xzncit/A3Mall-miniprogram/raw/master/readme/a/9.png "9.png")
 
  **bug反馈**
 
