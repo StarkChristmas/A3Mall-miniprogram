@@ -155,8 +155,8 @@ Page({
       id: id.join(",")
     }).then((res)=>{
       tabBarBadge(res.data);
-      getApp().updateUserInfo({ shop_count: res.data, isChecked: false });
-      this.setData({ result: goods, isDelete: false });
+      getApp().updateUserInfo({ shop_count: res.data });
+      this.setData({ result: goods, isDelete: false, isChecked: false, isEmpty: goods.length <= 0 ? true : false });
     }).catch((err)=>{
       toast("删除失败，请稍后在试。");
     });

@@ -1,0 +1,34 @@
+
+.tips-box {
+  padding: 150rpx 100rpx;
+}
+
+.tips-box .text-box {
+  font-size: 30rpx;
+  color: #999;
+  margin-top: 20rpx;
+  display: block;
+  text-align: center;
+}
+
+.tips-box .iconfont {
+  font-size: 155rpx;
+  color: #ccc;
+  text-align: center;
+  display: block;
+  margin-bottom: 30rpx;
+}
+
+.btn {
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  margin: 0 auto;
+  border-radius: 10rpx;
+  text-align: center;
+  color: #666;
+  margin-top: 35rpx;
+  background: #fff;
+  border: 1rpx solid #ccc;
+}

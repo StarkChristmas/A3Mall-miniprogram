@@ -38,4 +38,5 @@
   </view>
 
   <loadmore status="{{pageStatus}}"></loadmore>
+  <tips wx:if="{{ isEmpty }}" text="该分类下暂无内容"></tips>
 </view>

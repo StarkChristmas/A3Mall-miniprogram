@@ -10,14 +10,15 @@ Page({
    */
   data: {
     result: [],
-    isSelected: false
+    isSelected: false,
+    isEmpty: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.setData({ isEmpty: false });
   },
 
   /**
@@ -27,9 +28,13 @@ Page({
     this.setData({isSelected: wx.getStorageSync('ORDER_CONFIRM_SELECT')});
     getAddress().then(res=>{
       if(res.status){
-          this.setData({ result: res.data });
+        this.setData({ result: res.data, isEmpty: res.data.length <= 0 ? true : false });
+      }else{
+        this.setData({ isEmpty: true });
       }
-    });
+    }).catch(err=>{
+      this.setData({ isEmpty: true });
+    })
   },
 
   onSelected(event){
@@ -64,7 +69,7 @@ Page({
       }
     });
 
-    this.setData({ result: list });
+    this.setData({ result: list,isEmpty: list.length <= 0 ? true : false });
     editorAddressDelete({ id: id });
   }
 

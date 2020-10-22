@@ -23,7 +23,10 @@
         </view>
       </view>
     </checkbox-group>
+
+    <tips  text="暂无收藏"></tips>
   </view>
+
 
   <view class="operation-placeholder" wx:if="{{ isShow }}"></view>
   <view class="operation" wx:if="{{ isShow }}">

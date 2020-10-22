@@ -29,4 +29,6 @@
     </view>
 
   </view>
+
+  <tips wx:if="{{ isEmpty }}" text="暂无优惠劵"></tips>
 </view>

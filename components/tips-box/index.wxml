@@ -1,0 +1,5 @@
+<view class="tips-box">
+  <text class="iconfont {{ icon=='search' ? 'iconempty1' : 'iconempty'}}"></text>
+  <text class="text-box">{{ text }}</text>
+  <view bindtap="go" class="btn" wx:if="{{ jump == 1 }}">去逛逛</view>
+</view>

@@ -95,7 +95,7 @@ Page({
       id.push(item.id);
     })
 
-    this.setData({ result: result });
+    this.setData({ result: result,isEmpty: result.length <= 0 ? true : false });
 
     deleteCollect({
       id: id.join(",")

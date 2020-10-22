@@ -3,40 +3,41 @@
   <view class="list-wrap">
 
     <checkbox-group bindchange="checkboxChange">
-				<view class="list-box">
-					<view
-						class="list-item"
-            wx:for="{{result}}" 
-            wx:key="id" 
-            wx:for-item="item"
-					>
-						<view class="item-check">
-							<checkbox value="{{item.id}}" checked="{{item.checked}}" />
-						</view>
-						<view class="pic">
-							<image src="{{item.photo}}"></image>
-						</view>
-						<view class="goods">
-							<view class="t">{{ item.title }}</view>
-							<view class="m">{{ item.attr }}</view>
-							<view class="b">
-								<view>￥{{ item.price }}</view>
-								<view>
-									<number 
-                    index="{{ item.id }}"
-										min="1" 
-										max="{{ item.nums }}" 
-										value="{{ item.goods_nums }}"
-										disabled="{{ item.disabled }}"
-										bindnumber="onNumberEvent"
-									/>
-								</view>
+			<view class="list-box">
+				<view
+					class="list-item"
+					wx:for="{{result}}" 
+					wx:key="id" 
+					wx:for-item="item"
+				>
+					<view class="item-check">
+						<checkbox value="{{item.id}}" checked="{{item.checked}}" />
+					</view>
+					<view class="pic">
+						<image src="{{item.photo}}"></image>
+					</view>
+					<view class="goods">
+						<view class="t">{{ item.title }}</view>
+						<view class="m">{{ item.attr }}</view>
+						<view class="b">
+							<view>￥{{ item.price }}</view>
+							<view>
+								<number 
+									index="{{ item.id }}"
+									min="1" 
+									max="{{ item.nums }}" 
+									value="{{ item.goods_nums }}"
+									disabled="{{ item.disabled }}"
+									bindnumber="onNumberEvent"
+								/>
 							</view>
 						</view>
 					</view>
 				</view>
-				</checkbox-group>
+			</view>
+		</checkbox-group>
 
+		<loadmore status="{{pageStatus}}"></loadmore>
   </view>
 
   <view class="cart-bottom">
@@ -60,4 +61,6 @@
       提交订单
     </view>
   </view>
+
+	<tips wx:if="{{ isEmpty }}"></tips>
 </view>

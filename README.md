@@ -42,7 +42,7 @@
 ## QQ交流群
  <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=de316f1a1dbf61859529484891ee50369e3c2bc6fe37e15bb94f8bf731cc3482"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="A3Mall开发交流群" title="A3Mall开发交流群"></a>
 
-
+![输入图片说明](https://gitee.com/xzncit/A3Mall-miniprogram/raw/master/readme/1.jpg "1.jpg")
 
  **bug反馈**
 

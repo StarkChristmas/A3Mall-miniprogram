@@ -3,6 +3,8 @@
   "navigationBarBackgroundColor": "#b91922",
   "navigationBarTextStyle": "white",
   "usingComponents": {
-    "number": "/components/number-box/index"
+    "loadmore": "/components/load-more/index",
+    "number": "/components/number-box/index",
+    "tips": "/components/tips-box/index"
   }
 }

@@ -25,4 +25,6 @@
     </view>
   </view>
 
+  <loadmore status="{{pageStatus}}"></loadmore>
+  <tips wx:if="{{ isEmpty }}"></tips>
 </view>

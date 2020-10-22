@@ -1,6 +1,7 @@
 <view>
 
     <view class="address-list clearfix">
+        <tips wx:if="{{ isEmpty }}" text="您还没有添加地址" jump="0"></tips>
         <view 
         class="address-box" 
         wx:for="{{result}}" 
@@ -30,4 +31,5 @@
     <view class="btn">
         <view class="add" bindtap="onAdd">新增地址</view>
     </view>
+
 </view>

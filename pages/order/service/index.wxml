@@ -54,4 +54,5 @@
   </view>
 
   <loadmore status="{{pageStatus}}"></loadmore>
+  <tips wx:if="{{ isEmpty }}" icon="search" text="该分类下暂无订单"></tips>
 </view>
