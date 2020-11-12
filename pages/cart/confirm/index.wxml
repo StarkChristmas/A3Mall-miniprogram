@@ -65,6 +65,10 @@
       <text>订单信息</text>
     </view>
     <view class="list clear">
+      <view class="list-box clear" bindtap="onShowBonus">
+        <view>优惠劵</view>
+        <view>{{bonusText}}</view>
+      </view>
       <view class="list-box clear">
         <view>商品金额：</view>
         <view>{{orderData.real_amount}}</view>
@@ -121,9 +125,92 @@
   <view class="operation">
     <view class="amount">
       <text>合计：</text>
-      <text>￥{{orderData.order_amount}}</text>
+      <text wx:if="{{orderData.order_amount > 0}}">￥{{orderData.order_amount}}</text>
+      <text wx:else>{{ orderData.payable_amount }}</text>
     </view>
     <view class="pay" bindtap="onOrderSubmit">提交订单</view>
   </view>
-  
+
+  <!-- 优惠劵 -->
+  <view>
+      <view class="coupon-action {{ isCouponStatus==true ? 'coupon-show' : '' }}" style="background-color: #f8f8f8">
+          <view class="coupon-title">选择优惠劵</view>
+          <view class="coupon-body" style="max-height: {{ maxHeight }}px;">
+
+              <view wx:if="{{ coupons.length <= 0 }}" class="coupon-empty">
+                  暂无优惠劵
+              </view>
+
+              <view class="coupon-list" wx:if="{{ coupons.length }}">
+                  <view class="coupon-box"
+                  wx:for="{{coupons}}" 
+                  wx:key="index" 
+                  wx:for-item="item" 
+                  bindtap="onCoupon"
+                  data-obj="{{ item }}"
+                  >
+                      <view class="coupon-l-box">
+                          <view class="coupon-amount">
+                              {{ item.price }}
+                              <text>元</text>
+                          </view>
+                          <view class="coupon-condition">{{ item.condition }}</view>
+                      </view>
+                      <view class="coupon-r-box">
+                          <view class="coupon-name">{{ item.name }}</view>
+                          <view class="coupon-valid">{{ item.startAt }} - {{ item.endAt }}</view>
+                      </view>
+                      <view class="coupon-corner-checkbox">
+                          <text class="iconfont iconcheckbox_prekaobei {{ bonusId == item.id ? 'active' : '' }}"></text>
+                      </view>
+                  </view>
+
+              </view>
+
+              <view style="width: 100%;height: 120rpx; float: left"></view>
+          </view>
+          <text id="close" class="iconfont icongary" bindtap="onCouponClose"></text>
+          <view class="coupon-button" bindtap="onCancelBonus"><text>不使用优惠劵</text></view>
+      </view>
+  </view>
+  <!-- 优惠劵 -->
+
+  <!-- 收货地址 -->
+  <view>
+      <view class="address-action {{ isAddressStatus ? 'address-show' : '' }}" style="background-color: #f8f8f8">
+          <view class="address-title">请选择地址</view>
+          <view class="address-body" style="max-height: {{ maxHeight }}px;">
+
+              <view wx:if="{{ addressList.length <= 0 }}" class="address-empty">
+                  您还没有添加地址哦
+              </view>
+
+              <view class="address-list" wx:if="{{ addressList.length }}">
+
+                  <view 
+                  class="address-box"
+                  wx:for="{{addressList}}" 
+                  wx:key="index" 
+                  wx:for-item="item" 
+                  bindtap="onSelectedAddress"
+                  data-obj="{{ item }}"
+                  >
+                      <view class="address-r-box">
+                          <view class="address-name">{{ item.name }} {{ item.tel }}</view>
+                          <view class="address-valid">{{ item.address }}</view>
+                      </view>
+                      <view class="address-corner-checkbox">
+                          <text class="iconfont iconcheckbox_prekaobei {{ chosenAddressId == item.id ? 'active' : '' }}"></text>
+                      </view>
+                  </view>
+
+              </view>
+
+              <view style="width: 100%;height: 120rpx; float: left"></view>
+          </view>
+          <text id="close" class="iconfont icongary" bindtap="onCloseAddress"></text>
+          <view class="address-button" bindtap="onAddress"><text>新增地址</text></view>
+      </view>
+  </view>
+  <!-- 收货地址 -->
 </view>

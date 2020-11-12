@@ -1,5 +1,5 @@
 // pages/goods/view/index.js
-import { getSecondDetail } from "../../../api/http";
+import { getPointDetail } from "../../../api/http";
 import { toast,navigateTo } from "../../../utils/util";
 
 const App = getApp();
@@ -80,7 +80,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    getSecondDetail({
+    getPointDetail({
       id: this.data.goods_id
     }).then((result)=>{
       this.setData({

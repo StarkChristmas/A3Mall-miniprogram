@@ -24,7 +24,7 @@
       </view>
     </checkbox-group>
 
-    <tips  text="暂无收藏"></tips>
+    <tips wx:if="{{ isEmpty }}" text="暂无收藏"></tips>
   </view>
 
 

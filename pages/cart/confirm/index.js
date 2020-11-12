@@ -9,13 +9,22 @@ Page({
    * 页面的初始数据
    */
   data: {
+    maxHeight:0,
+    isCouponStatus: false,
+    bonusText: "请选择",
+    bonusId: '0',
+    coupons: [],
+
+    isAddressStatus: false,
+    chosenAddressId: '0',
+    addressList: [],
+
     address: {
       id: "",
       name: "",
       tel: "",
       address: ""
     },
-    bonusId: '0',
     providerList: [],
     orderData: {
       item:{},
@@ -40,9 +49,9 @@ Page({
     let type = options.type;
     let id = options.id;
     let params = {
-      id: id,type: type
+      id: id,type: type,bonus_id: this.data.bonusId
     };
-
+    
     if(in_array(type,["buy","point","second","regiment","special","group"])){
       params.sku_id = options.sku_id;
       params.num = options.num;
@@ -51,7 +60,10 @@ Page({
       }
     }
 
+    let info = wx.getSystemInfoSync();
+    this.setData({ maxHeight: info.windowHeight - 200 });
     this.setData({ params: params });
+    
   },
 
   /**
@@ -66,9 +78,16 @@ Page({
     getCartConfirm(this.data.params).then((res)=>{
       wx.hideLoading();
       if(res.status){
+        if(this.data.bonusText == '请选择'){
+          let bonusText = res.data.bonus.length <= 0 ? "暂无优惠劵" : res.data.bonus.length + "张可用"
+          this.setData({ bonusText: bonusText });
+        }
+
         this.setData({ 
           orderData: res.data,
-          address: res.data.address.default
+          coupons: res.data.bonus,
+          address: res.data.address.default,
+          addressList: res.data.address.list
          });
       }else{
         wx.setStorageSync("order_msg",res.info);
@@ -91,10 +110,7 @@ Page({
   },
 
   onSelectAddress(){
-    wx.setStorageSync('ORDER_CONFIRM_SELECT', 1);
-		wx.navigateTo({
-      url: '/pages/ucenter/address/list/index'
-    });
+    this.setData({ isAddressStatus: true });
   },
 
   onOrderSubmit(){
@@ -169,9 +185,62 @@ Page({
     }
   },
   
+  onShowBonus(){
+    this.setData({
+      isCouponStatus: true
+    });
+  },
+
+  onCouponClose(){
+    this.setData({
+      isCouponStatus: false
+    });
+  },
+
+  onCoupon(event){
+    let obj = event.currentTarget.dataset.obj;
+    this.setData({
+      isCouponStatus: false,
+      bonusId: obj.id,
+      "params.bonus_id": obj.id,
+      bonusText: "-￥" + obj.valueDesc + obj.unitDesc
+    });
+    this.getOrderData();
+  },
+
+  onCancelBonus(){
+    this.setData({
+      isCouponStatus: false,
+      bonusId: 0,
+      "params.bonus_id": 0,
+      bonusText: this.data.coupons.length <= 0 ? "暂无优惠劵" : this.data.coupons.length + "张可用"
+    });
+    this.getOrderData();
+  },
+
+  onSelectedAddress(event){
+    let obj = event.currentTarget.dataset.obj;
+    this.setData({
+      isAddressStatus: false,
+      chosenAddressId: obj.id,
+      "params.address_id": obj.id,
+      address: obj
+    });
+    this.getOrderData();
+  },
+
+  onAddress(){
+    wx.navigateTo({
+      url: '/pages/ucenter/address/editor/index'
+    })
+  },
+
+  onCloseAddress(){
+    this.setData({ isAddressStatus : false });
+  },
+
   onUnload(){
     //wx.removeStorageSync("order_msg");
     //wx.removeStorageSync("order_id");
-    wx.removeStorageSync("ORDER_CONFIRM_SELECT");
   }
 })

@@ -532,3 +532,13 @@ export function editUserInfo(params) {
         });
     })
 }
+
+export function gethelp() {
+    return new Promise((resolve, reject) => {
+        request.get("/ucenter/help").then((res)=>{
+            resolve(res)
+        }).catch((error)=>{
+            reject(error);
+        });
+    })
+}

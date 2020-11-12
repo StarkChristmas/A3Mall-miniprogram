@@ -36,7 +36,8 @@
     "pages/order/service/index",
     "pages/order/express/index",
     "pages/order/evaluate/index",
-    "pages/order/confirm_delivery/index"
+    "pages/order/confirm_delivery/index",
+    "pages/ucenter/help/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

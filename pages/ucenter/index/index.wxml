@@ -113,6 +113,12 @@
                       <view>会员设置</view>
                     </navigator>
                   </view>
+                  <view class="box">
+                    <navigator url="/pages/ucenter/help/index" hover-class="none">
+                      <view><text class="iconfont iconbangzhu ucenter-icon"></text></view>
+                      <view>帮助中心</view>
+                    </navigator>
+                  </view>
               </view>
           </view>
       </view>

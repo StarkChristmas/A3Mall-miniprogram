@@ -1,0 +1,18 @@
+<view class='help'>
+
+<view 
+class='item'
+wx:for="{{list}}" 
+wx:key="index" 
+wx:for-item="item"
+>
+  <view class='title'  data-index="{{ item.id }}" bindtap='panel'>
+    <view class="a">{{ item.title }}</view>
+    <view class="b"><text class="iconfont iconarrow-top {{active == item.id ? 'down':'up'}}"></text></view>
+  </view>
+  <view class="content" wx:if="{{ active == item.id }}">
+    <rich-text nodes="{{item.content}}"></rich-text>
+  </view>
+</view>
+
+</view>

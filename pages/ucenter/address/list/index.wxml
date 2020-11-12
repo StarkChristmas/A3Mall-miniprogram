@@ -18,7 +18,6 @@
             <view class="b">
                 <view v-if="item.is_default" class="b-1">默认地址</view>
                 <view class="b-2">
-                    <text bindtap="onSelected" data-id="{{item.id}}" wx:if="{{isSelected}}">选择</text>
                     <text bindtap="onEdit" data-id="{{item.id}}">修改</text>
                     <text bindtap="onDelete" data-id="{{item.id}}">删除</text>
                 </view>
