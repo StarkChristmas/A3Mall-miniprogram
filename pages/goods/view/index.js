@@ -126,7 +126,8 @@ Page({
    */
   onShow: function () {
     getGoodsDetail({
-      id: this.data.goods_id
+      id: this.data.goods_id,
+      token: getApp().globalData.token
     }).then((result)=>{
       this.setData({
         collect:    result.data.collect ? true : false,
