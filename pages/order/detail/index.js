@@ -125,11 +125,12 @@ Page({
   },
 
   resultOrderData(data){
+    let that = this;
     getApp().updateUserInfo({ shop_count: data.shop_count });
     switch (data.pay+"") {
       case "0":
-        this.setData({ order: [] });
-        this.getOrderDetailData();
+        that.setData({ order: [] });
+        that.getOrderDetailData();
         break;
       case "1":
         let params = data.result.params;
@@ -144,8 +145,8 @@ Page({
               title: "您己支付成功",
               icon: 'success',
               success() {
-                this.setData({ order: [] });
-                this.getOrderDetailData();
+                that.setData({ order: [] });
+                that.getOrderDetailData();
               }
             });
           },
