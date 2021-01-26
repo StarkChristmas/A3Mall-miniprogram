@@ -21,7 +21,7 @@
  | [服务端下载](https://gitee.com/xzncit/A3Mall)
  | [帮助文档](http://doc.a3-mall.com)
 
-
+## 本项目己停止维护，目前己使用uniapp重写小程序功能
 
 ## 项目介绍
    A3Mall商城系统是基于ThinkPhp6.0+Vue开发的一套移动电商系统，
